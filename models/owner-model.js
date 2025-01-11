@@ -5,8 +5,19 @@ const ownerSchema = new mongoose.Schema({
     minLength: 3,
     trim: true,
   },
-  email: String,
-  password: String,
+  email: {
+    type: String,
+    required: [true, "Email is required"],
+    unique: true,
+    trim: true,
+    lowercase: true,
+  },
+  password: {
+    type: String,
+    required: [true, "Password is required"],
+    minLength: [8, "Password must be at least 8 characters long"],
+    select: false,
+  },
   products: {
     type: Array,
     default: [],
