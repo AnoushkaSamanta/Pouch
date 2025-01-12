@@ -25,17 +25,13 @@ const userSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
-  isadmin: {
-    type: Boolean,
-    required: true,
-  },
   orders: {
     type: Array,
     default: [],
   },
   contact: {
     type: Number,
-    required: [true, "Contact number is required"],
+   
   },
   picture: String,
 });
