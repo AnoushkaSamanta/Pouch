@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
   image: {
-    type: String,
+    type: Buffer,
     required: [true, "Product image is required"],
   },
   name: {
@@ -25,15 +25,15 @@ const productSchema = new mongoose.Schema({
   },
   bgcolor: {
     type: String,
-    required: [true, "Background color is required"],
+   
   },
   panelcolor: {
     type: String,
-    required: [true, "Panel color is required"],
+   
   },
   textcolor: {
     type: String,
-    required: [true, "Text color is required"],
+
   },
 });
 

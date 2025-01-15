@@ -4,6 +4,7 @@ const productSchema = require("../models/product-model");
 const upload = require("../config/multer-config");
 
 router.post("/create", upload.single("image"), async (req, res) => {
+  try{
   const { name, price, discount, bgcolor, panelcolor, textcolor } = req.body;
   const product = await productSchema.create({
     image: req.file.buffer,
@@ -15,7 +16,10 @@ router.post("/create", upload.single("image"), async (req, res) => {
     textcolor,
   });
   req.flash("success" , "Product created successfully");
-  res.redirect("/owner/admin")
+  res.redirect("/owners/admin")
+}
+catch(err){
+  res.send(err.message);}
 });
 
 module.exports = router;
