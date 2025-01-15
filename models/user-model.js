@@ -19,19 +19,19 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is required"],
     minLength: [8, "Password must be at least 8 characters long"],
-   
   },
-  cart: {
-    type: Array,
-    default: [],
-  },
+  cart: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "product",
+    },
+  ],
   orders: {
     type: Array,
     default: [],
   },
   contact: {
     type: Number,
-   
   },
   picture: String,
 });
