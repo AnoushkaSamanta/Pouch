@@ -1,5 +1,6 @@
 const express = require('express');
 const isLoggedIn = require('../middlewares/isLoggedIn');
+const productModel = require("../models/product-model");
 const router=express.Router();
 
 router.get('/',(req,res)=>{
@@ -7,8 +8,9 @@ router.get('/',(req,res)=>{
     res.render("index",{error})
 });
 
-router.get("/shop",isLoggedIn,function(req,res){
-    res.render("shop");
+router.get("/shop",isLoggedIn,async function(req,res){
+    let product = await productModel.find()
+    res.render("shop" , {products : product});
 })
 
 

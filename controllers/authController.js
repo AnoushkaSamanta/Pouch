@@ -14,7 +14,7 @@ module.exports.registerUser = async function (req, res)
     if (user) 
     {
       req.flash("You already have an account.Please login");
-      return res.redirect("/");
+      res.redirect("/");
     }
     bcrypt.genSalt(10, function (err, salt) 
     {
@@ -31,7 +31,7 @@ module.exports.registerUser = async function (req, res)
           let token = generateToken(user);
           res.cookie("token", token);
           req.flash("User created successfully");
-          return res.redirect("/shop");
+          res.redirect("/shop");
         }
       });
     });
@@ -62,7 +62,7 @@ module.exports.loginUser = async function (req, res)
     } else 
     {
       req.flash("Email or password incorrect");
-      return res.redirect("/");
+      res.redirect("/");
     }
   });
 };
