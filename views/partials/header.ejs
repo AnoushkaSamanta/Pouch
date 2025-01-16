@@ -11,19 +11,21 @@
 
 <body class="font-['helvetica_now_display']">
     <nav class="w-full flex justify-between px-5 py-3 ">
-        <h3 class="text-xl">Pouch</h3>
+        <h3 class="text-2xl text-red-400 font-semibold">Pouch</h3>
+        
         <% var loggedin=typeof loggedin!="undefined"?loggedin:true %>
         <% if(loggedin){ %>
                <div class="flex gap-5">
-            <a href="">Shop</a>
-            <a href="/cart">Cart</a>
-            <a href="">My Account</a>
+            <a href="/shop" class="text-zinc-600  font-semibold">Shop</a>
+            <a href="/cart" class="text-zinc-600  font-semibold">Cart</a>
+            <a href="/account" class="text-zinc-600  font-semibold">My Account</a>
             <div class="px-2 py-1 bg-red-500 rounded-md">
             <a href="/users/logout" class="text-white">Logout</a>
             <div>
                 <% } %>
 
 
-        </div>
+       
 
     </nav>
+    <div class="bg-black h-[2px] w-[1500px] rounded-full ml-3"></div>

@@ -3,10 +3,10 @@
         <%  user.cart.map((product)=>{%>
             <div class="flex flex-row w-[1000px] gap-10 border border-zinc-500 ">
             <div class="w-[30%] rounded-md overflow-hidden  ">
-                <div class="w-full h-80 bg-[#222]">
-                    <img  class="h-[12rem]" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                <div class="w-full h-80 bg-[<%= product.bgcolor %>] flex justify-center items-center">
+                    <img  class="h-[15rem]" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
                 </div>
-                <div class="w-full flex justify-between px-5 py-4 bg-[#555]">
+                <div class="w-full flex justify-between px-5 py-4 bg-[<%= product.panelcolor %>] ">
                     <h3 class="text-2xl"><%= product.name%></h3>
                     <div class="flex items-center gap-2">
                         <i class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-add-line"></i>
@@ -14,9 +14,9 @@
                         <i class="w-7 h-7 bg-white flex rounded-full items-center justify-center ri-subtract-line"></i>
                     </div>
                 </div>
-                <div class="flex items-center justify-between px-5 py-3 bg-[#999]">
+                <div class="flex text-white items-center justify-between px-5 py-3 bg-[<%= product.textcolor %>] ">
                     <h4 class="text-lg">Net Total</h4>
-                    <h2 class="text-lg">₹ 1200</h2>
+                    <h2 class="text-lg">₹ <%= product.price+20 - product.discount/100*product.price%></h2>
                 </div>
             </div>
             <div class="w-[70%]">
