@@ -12,4 +12,10 @@ router.post("/login",loginUser)
 
 
 router.get("/logout",logout)
+
+router.get("/account",function(req,res){
+  
+  console.log(req.user)
+  res.render("account");
+})
 module.exports = router;

@@ -25,16 +25,17 @@ const productSchema = new mongoose.Schema({
   },
   bgcolor: {
     type: String,
-   
   },
   panelcolor: {
     type: String,
-   
   },
   textcolor: {
     type: String,
-
   },
+  quantity:{
+    type:Number,
+    default:1
+  }
 });
 
 module.exports = mongoose.model("product", productSchema);
