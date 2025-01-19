@@ -1,4 +1,31 @@
 <%- include('./partials/header') %>
 
+<div class="mt-8 p-6 bg-white shadow-lg rounded-lg max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold text-gray-800">Hi, <%= user.fullname %>!</h2>
+    
+    <!-- Profile Details Section -->
+    <div class="mt-6 space-y-4">
+        <div class="flex items-center">
+            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden">
+                <!-- User Profile Picture -->
+               <a href="/users/profilepic"> <img src="data:picture/jpeg;base64,<%= user.picture.toString('base64') %>" alt="User Profile" class="w-full h-full object-cover"></a>
+            </div>
+    
+        </div>
+
+        <!-- Account Details Section (Display-Only) -->
+        <div class="mt-6 bg-gray-100 p-4 rounded-lg shadow-md">
+            <h3 class="text-2xl font-medium text-gray-800">Account Details</h3>
+            <div class="space-y-4 mt-4">
+                <p class="text-gray-600">Full Name: <%= user.fullname %></p>
+                <p class="text-gray-600">Email: <%= user.email %></p>
+                
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <a href="/cart" class="inline-block bg-blue-500 text-white text-lg py-3 px-6 rounded-full hover:bg-blue-600 transition duration-300">Visit Your Cart</a>
+        </div>
+    </div>
+</div>
 
 <%- include('./partials/footer') %>

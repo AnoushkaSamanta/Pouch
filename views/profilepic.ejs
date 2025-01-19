@@ -1,0 +1,10 @@
+<%- include('./partials/header') %>
+
+<div class="p-10">
+    <h1 class="text-3xl mb-6">Upload Profile Picture</h1>
+    <form action="/users/uploadprofilepic" method="post" class="flex flex-col gap-2" enctype="multipart/form-data">
+        <input type="file" name="picture">
+        <input type="submit" value="Upload File" class=" px-4 py-3 bg-sky-600 w-[200px] rounded-lg">
+    </form>
+</div>
+<%- include('./partials/footer') %>
